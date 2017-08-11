@@ -20,10 +20,20 @@ module.exports = function(grunt) {
 				src: [
 					"<%= path.bower %>/angular/angular.js",
 					"<%= path.bower %>/angular-animate/angular-animate.js",
-					"<%= path.bower %>/angular-sanitize/angular-sanitize.js",
+					"<%= path.bower %>/angular-aria/angular-aria.js",
+					"<%= path.bower %>/angular-messages/angular-messages.js",
+//					"<%= path.bower %>/angular-sanitize/angular-sanitize.js",
+					"<%= path.bower %>/angular-material/angular-material.js",
 					"<%= path.bower %>/angular-ui-router/release/angular-ui-router.js",
+					"<%= path.src %>/js/web-resume.js",
 				],
-				dest: "<%= path.src %>/js/all-deps.js",
+				dest: "<%= path.src %>/js/web-resume.complete.js",
+			},
+			css: {
+				src: [
+					"<%= path.src %>/css/web-resume.css"
+				],
+				dest: "<%= path.src %>/css/web-resume.complete.css",
 			}
 		},
 		
@@ -31,23 +41,23 @@ module.exports = function(grunt) {
 			options: {
 				sourceMap: true,
 				sourceMapIncludeSources: true,
-				sourceMapIn: "<%= path.src %>/js/all-deps.js.map",
+				sourceMapIn: "<%= path.src %>/js/web-resume.complete.js.map",
 				compress: { drop_console: true }
 			},
 			dev: {
 				files: {
-					"<%= path.dest %>/js/dependencies.min.js": ["<%= path.src %>/js/all-deps.js"]
+					"<%= path.dest %>/js/web-resume.min.js": ["<%= path.src %>/js/web-resume.complete.js"]
 				}
 			}
 		},
 		
-//		cssnano: {
-//			dist: {
-//				files: {
-//					"<%= path.dest %>/css/ajuda-ai-1.0.0.css": "<%= path.src %>/css/ajuda-ai-1.0.0.css"
-//				}
-//			}
-//		},
+		cssnano: {
+			dist: {
+				files: {
+					"<%= path.dest %>/css/web-resume.min.css": "<%= path.src %>/css/web-resume.complete.css"
+				}
+			}
+		},
 		
 		imagemin: {
 			dynamic: {										// Another target
@@ -83,7 +93,7 @@ module.exports = function(grunt) {
 			server: {
 				options: {
 					port: 8000,
-					base: "dist"
+					base: "<%= path.dest %>"
 				}
 			}
 		},
@@ -109,5 +119,5 @@ module.exports = function(grunt) {
 	});
 
 	// 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
-	grunt.registerTask("default", ["concat:js", "uglify", /*"concat:css", "cssnano",*/ "imagemin", "htmlmin", "connect", "watch"]);
+	grunt.registerTask("default", ["concat:js", "uglify", "concat:css", "cssnano", "imagemin", "htmlmin", "connect", "watch"]);
 };

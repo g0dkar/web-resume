@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+#loading {
+	top: 50%;
+	left: 50%;
+	width: 300px;
+	height: 2em;
+	position: absolute;
+	text-align: center;
+	margin: -1em auto 0 -150px;
+	font-size: 4em;
+}

@@ -4,7 +4,7 @@
   "authors": [
     "Rafael Lins <rafael.lins777@gmail.com>"
   ],
-  "description": "Resumé of Rafael M. Lins",
+  "description": "Resumï¿½ of Rafael M. Lins",
   "main": "index.html",
   "keywords": [
     "rafael",
@@ -24,6 +24,7 @@
   "dependencies": {
     "angular-animate": "^1.6.5",
     "angular-sanitize": "^1.6.5",
-    "angular-ui-router": "^1.0.5"
+    "angular-ui-router": "^1.0.5",
+    "angular-material": "^1.1.4"
   }
 }
