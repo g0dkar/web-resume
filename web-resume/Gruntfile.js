@@ -8,9 +8,9 @@ module.exports = function(grunt) {
 	// 3. All configuration goes here
 	grunt.initConfig({
 		path: {
-			src: "src",					// Dev files
+			src: "dev",					// Dev files
 			dest: "dist",				// Dist files
-			bower: "bower_components"	// Bower Files
+			bower: "dev/js/components"	// Bower Files
 		},
 		concat: {
 			options: {
@@ -22,20 +22,8 @@ module.exports = function(grunt) {
 					"<%= path.bower %>/angular-animate/angular-animate.js",
 					"<%= path.bower %>/angular-sanitize/angular-sanitize.js",
 					"<%= path.bower %>/angular-ui-router/release/angular-ui-router.js",
-					"<%= path.bower %>/showdown/dist/showdown.js",
-					"<%= path.bower %>/ng-showdown/dist/ng-showdown.js",
-					"<%= path.bower %>/angular-easyfb/build/angular-easyfb.js",
-					"<%= path.bower %>/angular-recaptcha/release/angular-recaptcha.js",
-					"<%= path.src %>/js/ajudaai.js"
 				],
-				dest: "<%= path.src %>/js/ajuda-ai-1.0.0.js",
-			},
-			css: {
-				src: [
-					"<%= path.bower %>/bootstrap/dist/css/bootstrap.css",
-					"<%= path.src %>/css/ajudaai.css"
-				],
-				dest: "<%= path.src %>/css/ajuda-ai-1.0.0.css",
+				dest: "<%= path.src %>/js/all-deps.js",
 			}
 		},
 		
@@ -43,23 +31,23 @@ module.exports = function(grunt) {
 			options: {
 				sourceMap: true,
 				sourceMapIncludeSources: true,
-				sourceMapIn: "<%= path.src %>/js/ajuda-ai-1.0.0.js.map",
+				sourceMapIn: "<%= path.src %>/js/all-deps.js.map",
 				compress: { drop_console: true }
 			},
 			dev: {
 				files: {
-					"<%= path.dest %>/js/ajuda-ai-1.0.0.js": ["<%= path.src %>/js/ajuda-ai-1.0.0.js"]
+					"<%= path.dest %>/js/dependencies.min.js": ["<%= path.src %>/js/all-deps.js"]
 				}
 			}
 		},
 		
-		cssnano: {
-			dist: {
-				files: {
-					"<%= path.dest %>/css/ajuda-ai-1.0.0.css": "<%= path.src %>/css/ajuda-ai-1.0.0.css"
-				}
-			}
-		},
+//		cssnano: {
+//			dist: {
+//				files: {
+//					"<%= path.dest %>/css/ajuda-ai-1.0.0.css": "<%= path.src %>/css/ajuda-ai-1.0.0.css"
+//				}
+//			}
+//		},
 		
 		imagemin: {
 			dynamic: {										// Another target
@@ -121,5 +109,5 @@ module.exports = function(grunt) {
 	});
 
 	// 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
-	grunt.registerTask("default", ["concat:js", "uglify", "concat:css", "cssnano", "imagemin", "htmlmin", "connect", "watch"]);
+	grunt.registerTask("default", ["concat:js", "uglify", /*"concat:css", "cssnano",*/ "imagemin", "htmlmin", "connect", "watch"]);
 };
