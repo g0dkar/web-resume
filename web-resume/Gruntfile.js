@@ -23,7 +23,7 @@ module.exports = function(grunt) {
 					"<%= path.bower %>/angular-aria/angular-aria.js",
 					"<%= path.bower %>/angular-messages/angular-messages.js",
 //					"<%= path.bower %>/angular-sanitize/angular-sanitize.js",
-					"<%= path.bower %>/angular-material/angular-material.js",
+//					"<%= path.bower %>/angular-material/angular-material.js",
 					"<%= path.bower %>/angular-ui-router/release/angular-ui-router.js",
 					"<%= path.src %>/js/web-resume.js",
 				],
@@ -31,6 +31,7 @@ module.exports = function(grunt) {
 			},
 			css: {
 				src: [
+					"<%= path.src %>/js/components/bootstrap/dist/css/bootstrap.css",
 					"<%= path.src %>/css/web-resume.css"
 				],
 				dest: "<%= path.src %>/css/web-resume.complete.css",

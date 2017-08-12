@@ -1,5 +1,5 @@
 (function (angular) {
-	var app = angular.module("web-resume", ["ngMaterial", "ui.router"]);
+	var app = angular.module("web-resume", ["ngAnimate", "ui.router"]);
 	var debug = false;
 	
 	/**
@@ -36,16 +36,27 @@
 		$stateProvider.state("main", {
 			url: "",
 			"abstract": true,
-			templateUrl: "/fragments/main.html",
+			templateUrl: "/fragments/main.html"//,
 		})
-		.state("main.index", {
+		.state("main.bio", {
 			url: "",
-			templateUrl: "/fragments/main.index.html",
-//			controller: "IndexController"
+			templateUrl: "/fragments/main.bio.html",
 		})
-		.state("main.sobre", {
-			url: "/sobre",
-			templateUrl: "/fragments/main.sobre.html"
+		.state("main.education", {
+			url: "/education",
+			templateUrl: "/fragments/main.education.html",
+		})
+		.state("main.experience", {
+			url: "/experience",
+			templateUrl: "/fragments/main.experience.html",
+		})
+		.state("main.extra", {
+			url: "/extra",
+			templateUrl: "/fragments/main.extra.html",
+		})
+		.state("main.openSource", {
+			url: "/open-source",
+			templateUrl: "/fragments/main.openSource.html",
 		});
 	}]);
 })(angular);
