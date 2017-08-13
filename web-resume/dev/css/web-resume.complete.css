@@ -6873,6 +6873,10 @@ legend {
 
 @charset "UTF-8";
 
+body {
+	padding-bottom: 3em;
+}
+
 .nav {
 	margin: 2em 0 0.5em 0;
 	font-size: .8em;
@@ -6885,9 +6889,6 @@ legend {
 
 #bio img {
 	margin: 0 0 1em 1em;
-	border-radius: 999px;
-	-moz-border-radius: 999px;
-	-webkit-border-radius: 999px;
 }
 
 #loading {
@@ -6899,5 +6900,19 @@ legend {
 	text-align: center;
 	margin: -1em auto 0 -150px;
 	font-size: 4em;
+}
+
+.google-maps {
+	position: relative;
+	padding-bottom: 175%;
+	height: 0;
+	overflow: hidden;
+}
+.google-maps iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100% !important;
+	height: 100% !important;
 }
 /*# sourceMappingURL=web-resume.complete.css.map */
