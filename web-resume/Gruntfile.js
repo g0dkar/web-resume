@@ -31,7 +31,8 @@ module.exports = function(grunt) {
 			},
 			css: {
 				src: [
-					"<%= path.src %>/js/components/bootstrap/dist/css/bootstrap.css",
+//					"<%= path.src %>/js/components/bootstrap/dist/css/bootstrap.css",
+					"<%= path.src %>/css/bootstrap-readable.css",
 					"<%= path.src %>/css/web-resume.css"
 				],
 				dest: "<%= path.src %>/css/web-resume.complete.css",

@@ -49192,7 +49192,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
 			templateUrl: "/fragments/main.html"//,
 		})
 		.state("main.bio", {
-			url: "",
+			url: "/",
 			templateUrl: "/fragments/main.bio.html",
 		})
 		.state("main.education", {

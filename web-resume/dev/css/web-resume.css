@@ -1,25 +1,20 @@
 @charset "UTF-8";
 
-body {
-	_background: #1d1f2f;
-	_color: #fff;
-	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-weight: 300;
-	line-height: 1.5;
-	font-size: 2em;
-	color: #cfd2da;
-	background-color: #252830;
+.nav {
+	margin: 2em 0 0.5em 0;
+	font-size: .8em;
 }
 
-h1, h2, h3, h4, h5, h6 {
-	font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-weight: 400;
-	text-shadow: #000 1px 1px;
-	color: #fff;
+#bio p {
+	text-align: justify;
+	margin-bottom: 2em;
 }
 
-strong {
-	font-weight: 400;
+#bio img {
+	margin: 0 0 1em 1em;
+	border-radius: 999px;
+	-moz-border-radius: 999px;
+	-webkit-border-radius: 999px;
 }
 
 #loading {
