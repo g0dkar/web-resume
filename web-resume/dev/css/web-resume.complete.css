@@ -6904,9 +6904,12 @@ body {
 
 .google-maps {
 	position: relative;
-	padding-bottom: 175%;
+	padding-bottom: 100%;
 	height: 0;
 	overflow: hidden;
+}
+#bio .google-maps {
+	padding-bottom: 175%;
 }
 .google-maps iframe {
 	position: absolute;
@@ -6914,5 +6917,9 @@ body {
 	left: 0;
 	width: 100% !important;
 	height: 100% !important;
+}
+#experience .thumbnail p {
+	font-size: .8em;
+	height: 4.5em;
 }
 /*# sourceMappingURL=web-resume.complete.css.map */
